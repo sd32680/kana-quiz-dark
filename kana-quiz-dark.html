@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <meta name="theme-color" content="#07111f" />
-    <meta name="description" content="A focused Hiragana and Katakana romaji recall quiz." />
+    <meta name="description" content="KANOVA — a focused Hiragana and Katakana romaji recall quiz." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="icon" href="/manus-storage/kana-orbital-crest_1b160153.png" type="image/png" />
-    <title>Kana Quiz — Ink Observatory</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%23040914'/%3E%3Cpath fill='%23f4f9ff' d='M14 10h22v31L63 10h27L53 50l37 40H63L36 59v31H14z'/%3E%3C/svg%3E" />
+    <title>KANOVA — Kana Quiz</title>
 
     <style>
       /* Ink Observatory design: Japanese editorial minimalism + astronomical instruments.
@@ -104,12 +104,9 @@
         backdrop-filter: blur(20px);
       }
       .brand { display: inline-flex; align-items: center; gap: 12px; color: var(--porcelain); text-decoration: none; }
-      .brand-crest {
-        width: 42px;
-        height: 42px;
-        object-fit: contain;
-        filter: drop-shadow(0 0 11px rgba(103, 232, 249, 0.34));
-      }
+      .brand-mark { width: 43px; height: 43px; flex: 0 0 auto; filter: drop-shadow(0 0 11px rgba(103, 232, 249, 0.32)); }
+      .brand-mark rect { fill: rgba(4, 9, 20, 0.82); stroke: rgba(103, 232, 249, 0.36); stroke-width: 2; }
+      .brand-mark path { fill: #f4f9ff; }
       .brand-copy { display: grid; gap: 1px; }
       .brand-copy strong { font: 700 0.98rem/1 "Space Grotesk", sans-serif; letter-spacing: 0.02em; }
       .brand-copy span { color: var(--muted); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
@@ -305,7 +302,7 @@
       }
       @media (max-width: 760px) {
         .topbar { min-height: 64px; padding: 10px 17px; }
-        .brand-crest { width: 37px; height: 37px; }
+        .brand-mark { width: 37px; height: 37px; }
         .session-status { font-size: 0.65rem; }
         .brand-copy span { display: none; }
         main { padding: 20px 15px 50px; }
@@ -342,9 +339,12 @@
   </head>
   <body>
     <header class="topbar">
-      <a class="brand" href="#" id="brandHome" aria-label="Kana Quiz home">
-        <img class="brand-crest" src="/manus-storage/kana-orbital-crest_1b160153.png" alt="Kana Quiz orbital crest" />
-        <span class="brand-copy"><strong>Kana Quiz</strong><span>Ink Observatory</span></span>
+      <a class="brand" href="#" id="brandHome" aria-label="KANOVA home">
+        <svg class="brand-mark" viewBox="0 0 100 100" role="img" aria-label="KANOVA angular K logo">
+          <rect x="2" y="2" width="96" height="96" rx="16" />
+          <path d="M14 10h22v31L63 10h27L53 50l37 40H63L36 59v31H14z" />
+        </svg>
+        <span class="brand-copy"><strong>KANOVA</strong><span>Kana Observatory</span></span>
       </a>
       <div class="session-status" aria-live="polite"><span class="status-dot"></span><span id="topStatus">setup console</span></div>
     </header>
@@ -356,7 +356,7 @@
             <span class="eyebrow">Japanese Reading Practice</span>
             <h1 id="setupTitle">Learn the signal behind <span>every kana.</span></h1>
             <p>
-              This app is a companion to Tofugu’s Learn Hiragana Guide and Learn Katakana Guide. Choose the rows you want to strengthen, then answer each card in romaji with deliberate focus.
+              KANOVA is a companion to Tofugu’s Learn Hiragana Guide and Learn Katakana Guide. Choose the rows you want to strengthen, then answer each card in romaji with deliberate focus.
               If you are new to kana, visit <a href="https://www.tofugu.com/japanese/learn-hiragana/" target="_blank" rel="noopener">the hiragana guide</a> or <a href="https://www.tofugu.com/japanese/learn-katakana/" target="_blank" rel="noopener">the katakana guide</a> first.
             </p>
           </div>
